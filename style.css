@@ -98,34 +98,75 @@ nav a {
 /* PROGRAMS */
 .programs {
     text-align: center;
-    padding: 60px;
+    padding: 60px 0;
 }
 
+/* Робимо весь контейнер ширшим */
 .cards {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    gap: 40px; /* Більша відстань між картками */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Щоб на телефонах картки ставали одна під одну */
 }
 
+/* Оновлений клас .card (як у твоєму HTML) */
 .card {
     background: #f5f5f5;
-    padding: 25px;
-    border-radius: 20px;
-    width: 200px;
-    transition: 0.3s;
+    padding: 40px 30px; /* Значно збільшені внутрішні відступи */
+    border-radius: 25px;
+    width: 280px; /* Збільшена ширина (було 200px) */
+    min-height: 350px; /* Мінімальна висота для солідності */
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px); /* Сильніший ефект підйому */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    background: #ffffff;
 }
 
+/* Збільшуємо текст всередині */
+.card h3 {
+    font-size: 36px; /* Великий заголовок (U8, U12...) */
+    color: #1e3a5f;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 20px; /* Більший шрифт для віку */
+    font-weight: bold;
+}
+
+.card span {
+    font-size: 18px; /* Більший шрифт для опису навичок */
+    color: #555;
+    display: block;
+    margin: 10px 0;
+}
+
+/* Кнопка "Детальніше" */
 .card button {
-    margin-top: 10px;
+    margin-top: 20px;
     background: #f4b400;
     border: none;
-    padding: 8px 15px;
-    border-radius: 10px;
+    padding: 12px 25px;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%; /* Кнопка на всю ширину картки */
+    transition: 0.3s;
+}
+
+.card button:hover {
+    background: #ffb703;
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -318,4 +359,186 @@ nav a, .back-link, .back-link:visited {
 
 .back-link, .back-link:visited {
     color: #555; /* Для посилання "Повернутися на головну" */
+}
+/* Контейнер для всього блоку */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стиль для фото з "акцентом" */
+.about-image img {
+    border-radius: 20px;
+    box-shadow: -20px 20px 0px #ffb703; /* Жовта "підкладка" під фото */
+    transition: 0.4s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.02);
+}
+
+/* Сітка для карток "Чому ми?" */
+.about-features {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    background: #f4f7f6;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border-left: 6px solid #1e3a5f; /* Темно-синій акцент */
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    background: #ffffff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transform: translateX(10px);
+}
+
+.feature-card .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.feature-card p {
+    margin: 0;
+    font-weight: 600;
+    color: #1e3a5f;
+}
+
+/* Адаптивність для телефонів */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+    }
+}
+.stats-bar {
+    display: flex;
+    justify-content: space-around;
+    background: #1e3a5f; /* Темно-синій колір */
+    color: white;
+    padding: 30px 10px;
+    width: 90%; /* Блок буде трохи вужчим за екран */
+    max-width: 1100px;
+    margin: -60px auto 40px; /* -60px підніме блок вгору на банер */
+    position: relative;
+    z-index: 10; /* Щоб блок був поверх картинки */
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+/* Контейнер, який ставить картки в ряд */
+.cards {
+    display: flex; /* Робимо блоки гнучкими */
+    justify-content: center; /* Центруємо їх по горизонталі */
+    align-items: stretch; /* Робимо всі картки однакової висоти */
+    gap: 30px; /* Відстань між ними */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Дозволяє переноситись на новий рядок тільки якщо місця зовсім немає */
+    padding: 0 20px;
+}
+
+/* Окремі картки */
+.card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 20px;
+    width: 300px; /* Фіксована ширина для кожної картки */
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Стилі для фото всередині карток */
+.card-img-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб фото не стискалося */
+}/* Контейнер, який ставить картки в ряд */
+.cards {
+    display: flex; /* Робимо блоки гнучкими */
+    justify-content: center; /* Центруємо їх по горизонталі */
+    align-items: stretch; /* Робимо всі картки однакової висоти */
+    gap: 30px; /* Відстань між ними */
+    margin-top: 40px;
+    flex-wrap: wrap; /* Дозволяє переноситись на новий рядок тільки якщо місця зовсім немає */
+    padding: 0 20px;
+}
+
+/* Окремі картки */
+.card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 20px;
+    width: 300px; /* Фіксована ширина для кожної картки */
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* Стилі для фото всередині карток */
+.card-img-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Щоб фото не стискалося */
+}
+.hero-content {
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero-content h1 {
+    background: linear-gradient(45deg, #ffffff, #f4b400); /* Від білого до жовтого */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
 }

@@ -36,56 +36,89 @@
 </a>
     </div>
 </section>
-
-<section id="about" class="about">
-    <div class="about-left">
-        <h2>Про нашу академію</h2>
-        <p>
-            Ми навчаємо молодих гравців ставати професіоналами.
-            Розвиваємо техніку, дисципліну та командну гру.
-            Академія PRESSING – це не просто тренування. Це школа життя, де через футбол ми виховуємо лідерів, командних гравців та стійких особистостей. Сама назва "Пресинг" відображає нашу філософію: ми вчимо дітей не чекати на ініціативу, а діяти активно, тиснути на суперника тактично і ніколи не здаватися.
-        </p>
-       
-        <h3>Чому саме ми?</h3>
-        <div class="features">
-            <div>👤 Професійні тренери</div>
-            <div>⚽ Сучасні тренування</div>
-            <div>🤝 Дружня команда</div>
-        </div>
+<section class="stats-bar">
+    <div class="stat-item">
+        <span class="stat-number">10+</span>
+        <p class="stat-text">Років досвіду</p>
     </div>
-
-    <div class="about-right">
-        <img src="images/about.jpg" alt="Про нас">
+    <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <p class="stat-text">Вихованців</p>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">15</span>
+        <p class="stat-text">Тренерів</p>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <p class="stat-text">Турнірів виграно</p>
+    </div>
+</section>
+<section id="about" class="about">
+    <div class="about-container">
+        <div class="about-text">
+            <h2>Про нашу академію</h2>
+            <p>Ми навчаємо молодих гравців ставати професіоналами. Розвиваємо техніку, дисципліну та командну гру. Академія <strong>PRESSING</strong> — це школа життя, де через футбол ми виховуємо лідерів.</p>
+            
+            <h3>Чому саме ми?</h3>
+            <div class="about-features">
+                <div class="feature-card">
+                    <span class="icon">👤</span>
+                    <p>Професійні тренери</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">⚽️</span>
+                    <p>Сучасні тренування</p>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🤝</span>
+                    <p>Дружня команда</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <img src="images/about.jpg" alt="Тренування дітей">
+        </div>
     </div>
 </section>
 
 <section id="programs" class="programs">
     <h2>Тренувальні програми</h2>
 
-    <div class="cards">
+    <!-- ВАЖЛИВО: Обов'язково додай цей рядок перед картками -->
+    <div class="cards"> 
 
         <div class="card">
+            <div class="card-img-container">
+                <img src="images/u6.jpg" alt="U6">
+            </div>
             <h3>U8</h3>
-            <p>6–8 років</p>
+            <p>6-8 років</p>
             <span>Базові навички</span>
             <button onclick="info('u8')">Детальніше</button>
         </div>
 
         <div class="card">
+            <div class="card-img-container">
+                <img src="images/u9.jpeg" alt="U9">
+            </div>
             <h3>U12</h3>
-            <p>9–12 років</p>
+            <p>9-12 років</p>
             <span>Командна гра</span>
             <button onclick="info('u12')">Детальніше</button>
         </div>
 
         <div class="card">
+            <div class="card-img-container">
+                <img src="images/u13.jpg" alt="U13">
+            </div>
             <h3>U16</h3>
-            <p>13–16 років</p>
+            <p>13-16 років</p>
             <span>Професійний розвиток</span>
             <button onclick="info('u16')">Детальніше</button>
         </div>
 
-    </div>
+    </div> <!-- Закриваючий тег для .cards -->
 </section>
 
 <footer class="footer">
